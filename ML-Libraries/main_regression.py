@@ -7,8 +7,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error as mse
 from matplotlib import pyplot as plt
 
-# df = pd.read_csv('https://raw.githubusercontent.com/pvannyamelia/dsc_kuliah/main/data_science/assets_dsc/Salary_Data.csv')
-df = pd.read_csv('https://raw.githubusercontent.com/pvannyamelia/dsc_kuliah/main/data_science/assets_dsc/real_estate.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/pvannyamelia/dsc_kuliah/main/data_science/assets_dsc/Salary_Data.csv')
+# df = pd.read_csv('https://raw.githubusercontent.com/pvannyamelia/dsc_kuliah/main/data_science/assets_dsc/real_estate.csv')
 
 X = df.iloc[:, :-1]
 Y = df.iloc[:, -1]
@@ -40,7 +40,8 @@ df_compare.reset_index(drop=True, inplace=True)
 plt.figure(figsize=[25,8])
 plt.plot(df_compare.index,df_compare['prediction'], label='Predictied')
 plt.plot(df_compare.index, df_compare['actual'], label='Actual')
+plt.title('Salary Prediction Using Gradient Descent Linear Regression')
 plt.xlabel('Data Index')
-plt.ylabel('Price')
+plt.ylabel('Salary')
 plt.legend()
 plt.show()
